@@ -1,0 +1,141 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: How 2 Play Life #主页标题
+subtitle: Java后端开发之路 #副标题
+description: Java后端开发之路 # 网站描述，可以加一句自己喜欢的座右铭
+author: h2pl #作者，左下角显示
+avatar: /images/avatar.jpg #设置头像，放在\themes\next\source\images里
+language: zh-Hans # 选择中文简体
+timezone:
+since: 2018 #建站日期，左下角显示
+
+# 多说 ShortName
+#duoshuo_shortname: your_username # 多说评论，后面填写用户名
+# 百度分析
+#baidu_analytics: your_id # 填写自己获得的id
+
+# Social links
+#social:
+#  Github: https://github.com/h2pl 
+#  Email: mailto:362294931@qq.com
+#  知乎: https://www.zhihu.com/people/h2pl
+#  CSDN: https://blog.csdn.net/a724888  
+# title, chinese available
+#links_title: 友情链接
+# links
+#links:
+ # 我的简书: https://www.jianshu.com/users/9ab8d7b38c4e
+
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://h2pl.github.io/ #填自己的github pages网址
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+# 语法高亮
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+# 百度网站地图
+plugins:
+baidusitemap: # 需要安装插件 npm install hexo-generator-baidu-sitemap@0.1.1 --save
+  path: baidusitemap.xml
+
+# 主题切换
+theme: next
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+
+# ---------------下面选项需要对应插件的支持---------------
+# npm install hexo-generator-index --save
+# npm install hexo-generator-archive --save
+# npm install hexo-generator-category --save
+# npm install hexo-generator-tag --save
+
+index_generator:
+  per_page: 10 ##首页默认10篇文章标题 如果值为0不分页
+
+archive_generator:
+  per_page: 20 ##归档页面默认20篇文章标题
+  yearly: true  ##生成年视图
+  monthly: true ##生成月视图
+
+tag_generator:
+  per_page: 10 ##标签分类页面默认10篇文章
+
+category_generator:
+  per_page: 10 ###分类页面默认10篇文章
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: git
+# 填上你自己的仓库名，注意后面有`.git`
+  repository: git@github.com:h2pl/h2pl.github.io.git 
+  branch: master
+- type: git
+  repo: git@github.com:h2pl/h2pl.github.io.git
+  branch: src
+  extend_dirs: /
+  ignore_hidden: false
+  ignore_pattern:
+          public: .
+
